@@ -15,8 +15,8 @@ keymap.set("n", "H", ":tabnext<Return>", opts)
 keymap.set("n", "L", ":tabprev<Return>", opts)
 
 -- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
+keymap.set("n", "ss", ":split<Return> <C-w>j", opts)
+keymap.set("n", "sv", ":vsplit<Return> <C-w>l", opts)
 
 -- Move window
 keymap.set("n", "sh", "<C-w>h")

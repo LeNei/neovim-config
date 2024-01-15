@@ -14,3 +14,4 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 vim.opt.scrolloff = 8
 vim.cmd("set conceallevel=2")
+vim.cmd("set laststatus=3")
