@@ -7,7 +7,7 @@ return {
          formatters_by_ft = {
             lua = { "stylua" },
             rust = { "rustfmt" },
-            yaml = { "yamlfmt" },
+            yaml = { "prettierd" },
 
             -- Use a sub-list to run only the first available formatter
             javascript = { { "prettierd", "prettier" } },
@@ -20,6 +20,7 @@ return {
             json = { { "prettierd", "prettier" } },
             vue = { { "prettierd", "prettier" } },
             html = { { "prettierd", "prettier" } },
+            htmldjango = { { "prettierd", "prettier" } },
          },
          format_on_save = {
             -- These options will be passed to conform.format()

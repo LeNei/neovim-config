@@ -14,10 +14,7 @@ return {
             "<leader>f",
             function()
                local builtin = require("telescope.builtin")
-               builtin.find_files({
-                  no_ignore = false,
-                  hidden = true,
-               })
+               builtin.find_files()
             end,
             desc = "Lists files in your current working directory, respects .gitignore",
          },
@@ -46,7 +43,7 @@ return {
             desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
          },
          {
-            "<leader>;",
+            "<leader>r",
             function()
                local builtin = require("telescope.builtin")
                builtin.resume()
@@ -83,13 +80,19 @@ return {
             end,
             desc = "Open File Browser with the path of the current buffer",
          },
-         -- Disable keymaps
-         { "<leader>ff", false },
-         { "<leader>fF", false },
-         { "<leader>fb", false },
-         { "<leader>fc", false },
-         { "<leader>fr", false },
-         { "<leader>fR", false },
       },
+   },
+   {
+      "nvim-telescope/telescope-ui-select.nvim",
+      config = function()
+         require("telescope").setup({
+            extensions = {
+               ["ui-select"] = {
+                  require("telescope.themes").get_dropdown({}),
+               },
+            },
+         })
+         require("telescope").load_extension("ui-select")
+      end,
    },
 }

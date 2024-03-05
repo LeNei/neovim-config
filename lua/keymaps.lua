@@ -4,15 +4,18 @@ vim.g.mapleader = " "
 local opts = { noremap = true, silent = true }
 
 -- Yank to clipboard
--- keymap.set({ "n", "v" }, "<leader>y", '"+y')
+keymap.set({ "n", "v" }, "<leader>y", '"+y')
+
+-- Pase from clipboard
+keymap.set({ "n", "v" }, "<D-v>", '"+p')
 
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
 -- Tab movements
 keymap.set("n", "te", ":tabedit<Return>", opts)
-keymap.set("n", "H", ":tabnext<Return>", opts)
-keymap.set("n", "L", ":tabprev<Return>", opts)
+keymap.set("n", "L", ":tabnext<Return>", opts)
+keymap.set("n", "H", ":tabprev<Return>", opts)
 
 -- Split window
 keymap.set("n", "ss", ":split<Return> <C-w>j", opts)
